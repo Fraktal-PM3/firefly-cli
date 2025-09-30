@@ -71,6 +71,7 @@ var unsupportedARM64Images map[string]bool = map[string]bool{
 	"quorumengineering/tessera:24.4": true,
 }
 
+// ListStacks returns a list of all stack names in the default stacks directory
 func ListStacks() ([]string, error) {
 	files, err := os.ReadDir(constants.StacksDir)
 	if err != nil {
@@ -80,7 +81,7 @@ func ListStacks() ([]string, error) {
 	stacks := make([]string, 0, len(files))
 	for _, f := range files {
 		if f.IsDir() {
-			if exists, err := CheckExists(f.Name()); err == nil && exists {
+			if exists, err := CheckExists(f.Name(), constants.StacksDir); err == nil && exists {
 				stacks = append(stacks, f.Name())
 			}
 		}
@@ -258,8 +259,8 @@ func (s *StackManager) buildDockerCompose() *docker.DockerComposeConfig {
 	return compose
 }
 
-func CheckExists(stackName string) (bool, error) {
-	_, err := os.Stat(filepath.Join(constants.StacksDir, stackName, "stack.json"))
+func CheckExists(stackName string, stackDirectory string) (bool, error) {
+	_, err := os.Stat(filepath.Join(stackDirectory, stackName, "stack.json"))
 	switch {
 	case os.IsNotExist(err):
 		return false, nil
@@ -272,7 +273,7 @@ func CheckExists(stackName string) (bool, error) {
 
 func (s *StackManager) LoadStack(stackName string, stackDirectory string) error {
 	stackDir := filepath.Join(stackDirectory, stackName)
-	exists, err := CheckExists(stackName)
+	exists, err := CheckExists(stackName, stackDirectory)
 	if err != nil {
 		return err
 	}

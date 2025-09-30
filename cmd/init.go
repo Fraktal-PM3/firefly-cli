@@ -96,13 +96,12 @@ func initCommon(args []string) error {
 
 	if len(args) > 0 {
 		initOptions.StackName = args[0]
-		err := validateStackName(initOptions.StackName)
+		err := validateStackName(initOptions.StackName, initOptions.StackDirectory)
 		if err != nil {
 			return err
 		}
 	} else {
-		initOptions.StackName, _ = prompt("stack name: ", validateStackName)
-		fmt.Println("You selected " + initOptions.StackName)
+		return errors.New("stack name is required")
 	}
 
 	var memberCountInput string
@@ -152,7 +151,7 @@ func initCommon(args []string) error {
 	return nil
 }
 
-func validateStackName(stackName string) error {
+func validateStackName(stackName string, stackDir string) error {
 	if strings.TrimSpace(stackName) == "" {
 		return errors.New("stack name must not be empty")
 	}
@@ -161,7 +160,7 @@ func validateStackName(stackName string) error {
 		return fmt.Errorf("stack name may not contain any character matching the regex: %s", stackNameInvalidRegex)
 	}
 
-	if exists, err := stacks.CheckExists(stackName); exists {
+	if exists, err := stacks.CheckExists(stackName, stackDir); exists {
 		return fmt.Errorf("stack '%s' already exists", stackName)
 	} else {
 		return err
