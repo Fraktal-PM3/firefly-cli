@@ -17,7 +17,7 @@
 package main
 
 import (
-	"github.com/hyperledger/firefly-cli/cmd"
+	"github.com/Fraktal-PM3/firefly-cli/cmd"
 )
 
 func main() {

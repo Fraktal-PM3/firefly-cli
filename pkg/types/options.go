@@ -28,6 +28,7 @@ type PullOptions struct {
 
 type StartOptions struct {
 	NoRollback bool
+	StackDir   string
 }
 
 type InitOptions struct {

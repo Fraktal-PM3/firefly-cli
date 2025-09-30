@@ -23,10 +23,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/hyperledger/firefly-cli/internal/constants"
-	"github.com/hyperledger/firefly-cli/internal/docker"
-	"github.com/hyperledger/firefly-cli/internal/log"
-	"github.com/hyperledger/firefly-cli/pkg/types"
+	"github.com/Fraktal-PM3/firefly-cli/internal/constants"
+	"github.com/Fraktal-PM3/firefly-cli/internal/docker"
+	"github.com/Fraktal-PM3/firefly-cli/internal/log"
+	"github.com/Fraktal-PM3/firefly-cli/pkg/types"
 	"github.com/hyperledger/firefly-common/pkg/fftypes"
 )
 

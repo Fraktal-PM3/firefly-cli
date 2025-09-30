@@ -3,7 +3,7 @@ package tezosconnect
 import (
 	"testing"
 
-	"github.com/hyperledger/firefly-cli/pkg/types"
+	"github.com/Fraktal-PM3/firefly-cli/pkg/types"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -21,7 +21,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/hyperledger/firefly-cli/internal/stacks"
+	"github.com/Fraktal-PM3/firefly-cli/internal/stacks"
 )
 
 var listCommand = &cobra.Command{

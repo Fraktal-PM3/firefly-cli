@@ -33,22 +33,22 @@ import (
 	"text/tabwriter"
 	"time"
 
-	"github.com/hyperledger/firefly-cli/internal/blockchain"
-	cardanoremoterpc "github.com/hyperledger/firefly-cli/internal/blockchain/cardano/remoterpc"
-	"github.com/hyperledger/firefly-cli/internal/blockchain/ethereum/besu"
-	"github.com/hyperledger/firefly-cli/internal/blockchain/ethereum/geth"
-	"github.com/hyperledger/firefly-cli/internal/blockchain/ethereum/quorum"
-	ethremoterpc "github.com/hyperledger/firefly-cli/internal/blockchain/ethereum/remoterpc"
-	"github.com/hyperledger/firefly-cli/internal/blockchain/fabric"
-	tezosremoterpc "github.com/hyperledger/firefly-cli/internal/blockchain/tezos/remoterpc"
-	"github.com/hyperledger/firefly-cli/internal/constants"
-	"github.com/hyperledger/firefly-cli/internal/core"
-	"github.com/hyperledger/firefly-cli/internal/docker"
-	"github.com/hyperledger/firefly-cli/internal/log"
-	"github.com/hyperledger/firefly-cli/internal/tokens"
-	"github.com/hyperledger/firefly-cli/internal/tokens/erc1155"
-	"github.com/hyperledger/firefly-cli/internal/tokens/erc20erc721"
-	"github.com/hyperledger/firefly-cli/pkg/types"
+	"github.com/Fraktal-PM3/firefly-cli/internal/blockchain"
+	cardanoremoterpc "github.com/Fraktal-PM3/firefly-cli/internal/blockchain/cardano/remoterpc"
+	"github.com/Fraktal-PM3/firefly-cli/internal/blockchain/ethereum/besu"
+	"github.com/Fraktal-PM3/firefly-cli/internal/blockchain/ethereum/geth"
+	"github.com/Fraktal-PM3/firefly-cli/internal/blockchain/ethereum/quorum"
+	ethremoterpc "github.com/Fraktal-PM3/firefly-cli/internal/blockchain/ethereum/remoterpc"
+	"github.com/Fraktal-PM3/firefly-cli/internal/blockchain/fabric"
+	tezosremoterpc "github.com/Fraktal-PM3/firefly-cli/internal/blockchain/tezos/remoterpc"
+	"github.com/Fraktal-PM3/firefly-cli/internal/constants"
+	"github.com/Fraktal-PM3/firefly-cli/internal/core"
+	"github.com/Fraktal-PM3/firefly-cli/internal/docker"
+	"github.com/Fraktal-PM3/firefly-cli/internal/log"
+	"github.com/Fraktal-PM3/firefly-cli/internal/tokens"
+	"github.com/Fraktal-PM3/firefly-cli/internal/tokens/erc1155"
+	"github.com/Fraktal-PM3/firefly-cli/internal/tokens/erc20erc721"
+	"github.com/Fraktal-PM3/firefly-cli/pkg/types"
 	"github.com/hyperledger/firefly-common/pkg/fftypes"
 	"github.com/miracl/conflate"
 
@@ -270,8 +270,8 @@ func CheckExists(stackName string) (bool, error) {
 	}
 }
 
-func (s *StackManager) LoadStack(stackName string) error {
-	stackDir := filepath.Join(constants.StacksDir, stackName)
+func (s *StackManager) LoadStack(stackName string, stackDirectory string) error {
+	stackDir := filepath.Join(stackDirectory, stackName)
 	exists, err := CheckExists(stackName)
 	if err != nil {
 		return err
@@ -291,7 +291,6 @@ func (s *StackManager) LoadStack(stackName string) error {
 	s.Stack.StackDir = stackDir
 	s.blockchainProvider = s.getBlockchainProvider()
 	s.tokenProviders = s.getITokenProviders()
-
 	if s.Stack.RequestTimeout > 0 {
 		core.SetRequestTimeout(s.Stack.RequestTimeout)
 	}

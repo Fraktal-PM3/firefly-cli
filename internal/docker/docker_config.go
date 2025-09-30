@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/hyperledger/firefly-cli/internal/constants"
-	"github.com/hyperledger/firefly-cli/pkg/types"
+	"github.com/Fraktal-PM3/firefly-cli/internal/constants"
+	"github.com/Fraktal-PM3/firefly-cli/pkg/types"
 )
 
 type DependsOn map[string]map[string]string

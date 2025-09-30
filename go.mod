@@ -14,7 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-module github.com/hyperledger/firefly-cli
+module github.com/Fraktal-PM3/firefly-cli
 
 go 1.22
 

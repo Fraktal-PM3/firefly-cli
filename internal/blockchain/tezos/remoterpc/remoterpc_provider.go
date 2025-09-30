@@ -22,14 +22,14 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/hyperledger/firefly-cli/internal/blockchain/tezos"
-	"github.com/hyperledger/firefly-cli/internal/blockchain/tezos/connector"
-	"github.com/hyperledger/firefly-cli/internal/blockchain/tezos/connector/tezosconnect"
-	"github.com/hyperledger/firefly-cli/internal/blockchain/tezos/tezossigner"
+	"github.com/Fraktal-PM3/firefly-cli/internal/blockchain/tezos"
+	"github.com/Fraktal-PM3/firefly-cli/internal/blockchain/tezos/connector"
+	"github.com/Fraktal-PM3/firefly-cli/internal/blockchain/tezos/connector/tezosconnect"
+	"github.com/Fraktal-PM3/firefly-cli/internal/blockchain/tezos/tezossigner"
 
-	"github.com/hyperledger/firefly-cli/internal/constants"
-	"github.com/hyperledger/firefly-cli/internal/docker"
-	"github.com/hyperledger/firefly-cli/pkg/types"
+	"github.com/Fraktal-PM3/firefly-cli/internal/constants"
+	"github.com/Fraktal-PM3/firefly-cli/internal/docker"
+	"github.com/Fraktal-PM3/firefly-cli/pkg/types"
 )
 
 type RemoteRPCProvider struct {

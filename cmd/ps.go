@@ -21,8 +21,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/hyperledger/firefly-cli/internal/log"
-	"github.com/hyperledger/firefly-cli/internal/stacks"
+	"github.com/Fraktal-PM3/firefly-cli/internal/log"
+	"github.com/Fraktal-PM3/firefly-cli/internal/stacks"
 	"github.com/spf13/cobra"
 )
 
@@ -59,7 +59,11 @@ var psCmd = &cobra.Command{
 
 		stackManager := stacks.NewStackManager(ctx)
 		for _, stackName := range allStacks {
-			if err := stackManager.LoadStack(stackName); err != nil {
+			stackDirectory, err := cmd.Flags().GetString("stack-dir")
+			if err != nil {
+				return err
+			}
+			if err := stackManager.LoadStack(stackName, stackDirectory); err != nil {
 				return err
 			}
 

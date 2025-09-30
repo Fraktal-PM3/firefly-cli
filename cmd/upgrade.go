@@ -22,9 +22,9 @@ import (
 	"time"
 
 	"github.com/briandowns/spinner"
-	"github.com/hyperledger/firefly-cli/internal/docker"
-	"github.com/hyperledger/firefly-cli/internal/log"
-	"github.com/hyperledger/firefly-cli/internal/stacks"
+	"github.com/Fraktal-PM3/firefly-cli/internal/docker"
+	"github.com/Fraktal-PM3/firefly-cli/internal/log"
+	"github.com/Fraktal-PM3/firefly-cli/internal/stacks"
 	"github.com/spf13/cobra"
 )
 
@@ -64,7 +64,12 @@ var upgradeCmd = &cobra.Command{
 		}
 		version := args[1]
 
-		if err := stackManager.LoadStack(stackName); err != nil {
+		stackDirectory, err := cmd.Flags().GetString("stack-dir")
+		if err != nil {
+			return err
+		}
+
+		if err := stackManager.LoadStack(stackName, stackDirectory); err != nil {
 			return err
 		}
 		fmt.Printf("upgrading stack '%s'... ", stackName)

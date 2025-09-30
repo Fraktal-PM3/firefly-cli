@@ -20,9 +20,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/hyperledger/firefly-cli/internal/docker"
-	"github.com/hyperledger/firefly-cli/internal/log"
-	"github.com/hyperledger/firefly-cli/internal/stacks"
+	"github.com/Fraktal-PM3/firefly-cli/internal/docker"
+	"github.com/Fraktal-PM3/firefly-cli/internal/log"
+	"github.com/Fraktal-PM3/firefly-cli/internal/stacks"
 	"github.com/spf13/cobra"
 )
 
@@ -45,7 +45,11 @@ var accountsCreateCmd = &cobra.Command{
 	RunE: func(cmd *cobra.Command, args []string) error {
 		stackName := args[0]
 		stackManager := stacks.NewStackManager(cmd.Context())
-		if err := stackManager.LoadStack(stackName); err != nil {
+		stackDirectory, err := cmd.Flags().GetString("stack-dir")
+		if err != nil {
+			return err
+		}
+		if err := stackManager.LoadStack(stackName, stackDirectory); err != nil {
 			return err
 		}
 		account, err := stackManager.CreateAccount(args[1:])

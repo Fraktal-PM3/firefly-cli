@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/hyperledger/firefly-cli/internal/core"
+	"github.com/Fraktal-PM3/firefly-cli/internal/core"
 )
 
 func (s *StackManager) registerFireflyIdentities() error {

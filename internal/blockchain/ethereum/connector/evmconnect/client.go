@@ -23,11 +23,11 @@ import (
 	"path"
 	"time"
 
-	"github.com/hyperledger/firefly-cli/internal/blockchain/ethereum"
-	"github.com/hyperledger/firefly-cli/internal/blockchain/ethereum/ethtypes"
-	"github.com/hyperledger/firefly-cli/internal/core"
-	"github.com/hyperledger/firefly-cli/internal/docker"
-	"github.com/hyperledger/firefly-cli/pkg/types"
+	"github.com/Fraktal-PM3/firefly-cli/internal/blockchain/ethereum"
+	"github.com/Fraktal-PM3/firefly-cli/internal/blockchain/ethereum/ethtypes"
+	"github.com/Fraktal-PM3/firefly-cli/internal/core"
+	"github.com/Fraktal-PM3/firefly-cli/internal/docker"
+	"github.com/Fraktal-PM3/firefly-cli/pkg/types"
 )
 
 type EvmconnectRequest struct {

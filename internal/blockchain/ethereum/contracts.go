@@ -21,8 +21,8 @@ import (
 	"encoding/json"
 	"os"
 
-	"github.com/hyperledger/firefly-cli/internal/blockchain/ethereum/ethtypes"
-	"github.com/hyperledger/firefly-cli/internal/docker"
+	"github.com/Fraktal-PM3/firefly-cli/internal/blockchain/ethereum/ethtypes"
+	"github.com/Fraktal-PM3/firefly-cli/internal/docker"
 )
 
 type truffleCompiledContract struct {

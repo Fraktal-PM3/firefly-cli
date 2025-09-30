@@ -23,7 +23,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/hyperledger/firefly-cli/internal/stacks"
+	"github.com/Fraktal-PM3/firefly-cli/internal/stacks"
 	"github.com/spf13/cobra"
 )
 

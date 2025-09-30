@@ -24,10 +24,10 @@ import (
 	"path/filepath"
 
 	"github.com/blinklabs-io/bursa"
-	"github.com/hyperledger/firefly-cli/internal/blockchain/cardano"
-	"github.com/hyperledger/firefly-cli/internal/constants"
-	"github.com/hyperledger/firefly-cli/internal/docker"
-	"github.com/hyperledger/firefly-cli/pkg/types"
+	"github.com/Fraktal-PM3/firefly-cli/internal/blockchain/cardano"
+	"github.com/Fraktal-PM3/firefly-cli/internal/constants"
+	"github.com/Fraktal-PM3/firefly-cli/internal/docker"
+	"github.com/Fraktal-PM3/firefly-cli/pkg/types"
 )
 
 type CardanoSignerProvider struct {

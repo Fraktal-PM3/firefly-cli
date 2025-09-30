@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hyperledger/firefly-cli/internal/utils"
+	"github.com/Fraktal-PM3/firefly-cli/internal/utils"
 	"github.com/stretchr/testify/assert"
 )
 

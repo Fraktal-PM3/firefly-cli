@@ -19,10 +19,12 @@ package cmd
 import (
 	"context"
 	"fmt"
+	"path"
 
-	"github.com/hyperledger/firefly-cli/internal/docker"
-	"github.com/hyperledger/firefly-cli/internal/log"
-	"github.com/hyperledger/firefly-cli/internal/stacks"
+	"github.com/Fraktal-PM3/firefly-cli/internal/constants"
+	"github.com/Fraktal-PM3/firefly-cli/internal/docker"
+	"github.com/Fraktal-PM3/firefly-cli/internal/log"
+	"github.com/Fraktal-PM3/firefly-cli/internal/stacks"
 	"github.com/spf13/cobra"
 )
 
@@ -47,8 +49,13 @@ var stopCmd = &cobra.Command{
 			return fmt.Errorf("no stack specified")
 		}
 		stackName := args[0]
+		
+		stackDirectory, err := cmd.Flags().GetString("stack-dir")
+		if err != nil {
+			return err
+		}		
 
-		if err := stackManager.LoadStack(stackName); err != nil {
+		if err := stackManager.LoadStack(stackName, stackDirectory); err != nil {
 			return err
 		}
 
@@ -62,5 +69,6 @@ var stopCmd = &cobra.Command{
 }
 
 func init() {
+	stopCmd.Flags().StringP("stack-dir", "d", path.Join(constants.StacksDir), "Path to the stack directory")
 	rootCmd.AddCommand(stopCmd)
 }
