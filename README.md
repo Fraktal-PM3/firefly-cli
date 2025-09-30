@@ -1,6 +1,12 @@
+> ⚠️ **WARNING: Unofficial Fork** ⚠️  
+> This is a fork of the FireFly CLI specifically for PM3 development and use. This is **NOT** the official FireFly CLI. For the official FireFly CLI, please visit the [official Hyperledger FireFly repository](https://github.com/hyperledger/firefly-cli).  
+> Use this fork at your own risk and only for PM3-related development purposes.
+
+
 # FireFly CLI
 
 ![build](https://github.com/Fraktal-PM3/firefly-cli/actions/workflows/build.yml/badge.svg?branch=main)
+
 
 The FireFly CLI can be used to create local [FireFly](https://github.com/hyperledger/firefly) stacks
 for offline development of blockchain apps. This allows developers to rapidly iterate on their idea without
