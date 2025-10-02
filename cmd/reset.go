@@ -19,7 +19,9 @@ package cmd
 import (
 	"context"
 	"fmt"
+	"path"
 
+	"github.com/Fraktal-PM3/firefly-cli/internal/constants"
 	"github.com/Fraktal-PM3/firefly-cli/internal/docker"
 	"github.com/Fraktal-PM3/firefly-cli/internal/log"
 	"github.com/Fraktal-PM3/firefly-cli/internal/stacks"
@@ -88,5 +90,6 @@ Note: this will also stop the stack if it is running.
 
 func init() {
 	resetCmd.Flags().BoolVarP(&force, "force", "f", false, "Reset the stack without prompting for confirmation")
+	resetCmd.Flags().StringP("stack-dir", "d", path.Join(constants.StacksDir), "Directory where the stack is located ")
 	rootCmd.AddCommand(resetCmd)
 }
