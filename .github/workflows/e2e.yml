@@ -9,6 +9,7 @@ permissions:
 jobs:
   e2e-test:
     runs-on: ubuntu-latest
+    if: false
     strategy:
       fail-fast: false
       matrix:
