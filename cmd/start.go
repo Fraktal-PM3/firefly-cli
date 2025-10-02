@@ -20,15 +20,13 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"path"
 	"time"
 
-	"github.com/briandowns/spinner"
-	"github.com/Fraktal-PM3/firefly-cli/internal/constants"
 	"github.com/Fraktal-PM3/firefly-cli/internal/docker"
 	"github.com/Fraktal-PM3/firefly-cli/internal/log"
 	"github.com/Fraktal-PM3/firefly-cli/internal/stacks"
 	"github.com/Fraktal-PM3/firefly-cli/pkg/types"
+	"github.com/briandowns/spinner"
 	"github.com/spf13/cobra"
 )
 
@@ -112,7 +110,6 @@ This command will start a stack and run it in the background.
 
 func init() {
 	startCmd.Flags().BoolVarP(&startOptions.NoRollback, "no-rollback", "b", false, "Do not automatically rollback changes if first time setup fails")
-	startCmd.Flags().StringP("stack-dir", "d", path.Join(constants.StacksDir), "Path to the stack directory")
 	rootCmd.AddCommand(startCmd)
 
 }

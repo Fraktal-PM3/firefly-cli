@@ -27,13 +27,13 @@ type PullOptions struct {
 }
 
 type StartOptions struct {
-	NoRollback bool
-	StackDirectory   string
+	NoRollback     bool
+	StackDirectory string
 }
 
 type InitOptions struct {
 	StackName                 string
-	StackDirectory             string
+	StackDirectory            string
 	MemberCount               int
 	FireFlyBasePort           int
 	ServicesBasePort          int

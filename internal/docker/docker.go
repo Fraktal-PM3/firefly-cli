@@ -26,8 +26,8 @@ import (
 	"path"
 	"strings"
 
-	"github.com/google/go-containerregistry/pkg/crane"
 	"github.com/Fraktal-PM3/firefly-cli/internal/log"
+	"github.com/google/go-containerregistry/pkg/crane"
 )
 
 type (
