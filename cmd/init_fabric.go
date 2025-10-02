@@ -19,10 +19,12 @@ package cmd
 import (
 	"context"
 	"fmt"
+	"path"
 	"path/filepath"
 
 	"github.com/spf13/cobra"
 
+	"github.com/Fraktal-PM3/firefly-cli/internal/constants"
 	"github.com/Fraktal-PM3/firefly-cli/internal/docker"
 	"github.com/Fraktal-PM3/firefly-cli/internal/log"
 	"github.com/Fraktal-PM3/firefly-cli/internal/stacks"
@@ -84,5 +86,6 @@ func init() {
 	initFabricCmd.Flags().StringVar(&initOptions.ChannelName, "channel", "", "The name of the Fabric channel on which the FireFly chaincode has been deployed")
 	initFabricCmd.Flags().StringVar(&initOptions.ChaincodeName, "chaincode", "", "The name given to the FireFly chaincode when it was deployed")
 	initFabricCmd.Flags().BoolVar(&initOptions.CustomPinSupport, "custom-pin-support", false, "Configure the blockchain listener to listen for BatchPin events from any chaincode on the channel")
+	initFabricCmd.Flags().StringVarP(&initOptions.StackDirectory, "stack-dir", "d", path.Join(constants.StacksDir), "Directory where the stack should be created (defaults to ./stacks)")
 	initCmd.AddCommand(initFabricCmd)
 }

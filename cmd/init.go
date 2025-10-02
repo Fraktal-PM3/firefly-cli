@@ -22,6 +22,7 @@ import (
 	"encoding/hex"
 	"errors"
 	"fmt"
+	"path"
 	"path/filepath"
 	"regexp"
 	"strconv"
@@ -29,6 +30,7 @@ import (
 
 	"github.com/spf13/cobra"
 
+	"github.com/Fraktal-PM3/firefly-cli/internal/constants"
 	"github.com/Fraktal-PM3/firefly-cli/internal/log"
 	"github.com/Fraktal-PM3/firefly-cli/internal/stacks"
 	"github.com/Fraktal-PM3/firefly-cli/pkg/types"
@@ -334,5 +336,6 @@ func init() {
 	initCmd.PersistentFlags().StringArrayVar(&initOptions.NodeNames, "node-name", []string{}, "Node name")
 	initCmd.PersistentFlags().BoolVar(&initOptions.RemoteNodeDeploy, "remote-node-deploy", false, "Enable or disable deployment of FireFly contracts on remote nodes")
 	initCmd.PersistentFlags().StringToStringVar(&initOptions.EnvironmentVars, "environment-vars", map[string]string{}, "Common environment variables to set on all containers in FireFly stack")
+	initCmd.PersistentFlags().StringVarP(&initOptions.StackDirectory, "stack-dir", "d", path.Join(constants.StacksDir), "Directory where the stack should be created (defaults to ./stacks)")
 	rootCmd.AddCommand(initCmd)
 }

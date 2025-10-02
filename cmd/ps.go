@@ -19,8 +19,10 @@ package cmd
 import (
 	"context"
 	"fmt"
+	"path"
 	"strings"
 
+	"github.com/Fraktal-PM3/firefly-cli/internal/constants"
 	"github.com/Fraktal-PM3/firefly-cli/internal/log"
 	"github.com/Fraktal-PM3/firefly-cli/internal/stacks"
 	"github.com/spf13/cobra"
@@ -76,6 +78,7 @@ var psCmd = &cobra.Command{
 }
 
 func init() {
+	psCmd.Flags().StringP("stack-dir", "d", path.Join(constants.StacksDir), "Directory where the stack is located ")
 	rootCmd.AddCommand(psCmd)
 }
 
