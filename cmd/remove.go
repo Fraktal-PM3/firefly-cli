@@ -20,7 +20,6 @@ import (
 	"context"
 	"fmt"
 	"os"
-	"path"
 	"path/filepath"
 
 	"github.com/Fraktal-PM3/firefly-cli/internal/constants"
@@ -90,6 +89,5 @@ and configuration.`,
 
 func init() {
 	removeCmd.Flags().BoolVarP(&force, "force", "f", false, "Remove the stack without prompting for confirmation")
-	removeCmd.Flags().StringP("stack-dir", "d", path.Join(constants.StacksDir), "Directory where the stack is located ")
 	rootCmd.AddCommand(removeCmd)
 }

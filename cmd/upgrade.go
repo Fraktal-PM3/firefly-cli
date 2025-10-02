@@ -19,10 +19,8 @@ package cmd
 import (
 	"context"
 	"fmt"
-	"path"
 	"time"
 
-	"github.com/Fraktal-PM3/firefly-cli/internal/constants"
 	"github.com/Fraktal-PM3/firefly-cli/internal/docker"
 	"github.com/Fraktal-PM3/firefly-cli/internal/log"
 	"github.com/Fraktal-PM3/firefly-cli/internal/stacks"
@@ -85,6 +83,5 @@ var upgradeCmd = &cobra.Command{
 
 func init() {
 	upgradeCmd.Flags().BoolVarP(&forceUpgrade, "force", "f", false, "Force upgrade even between unsupported versions. May result in a broken environment. Use with caution.")
-	upgradeCmd.Flags().StringP("stack-dir", "d", path.Join(constants.StacksDir), "Directory where the stack is located ")
 	rootCmd.AddCommand(upgradeCmd)
 }

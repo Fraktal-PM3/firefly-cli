@@ -19,10 +19,7 @@ package cmd
 import (
 	"context"
 	"errors"
-	"path"
 	"time"
-
-	"github.com/Fraktal-PM3/firefly-cli/internal/constants"
 	"github.com/Fraktal-PM3/firefly-cli/internal/docker"
 	"github.com/Fraktal-PM3/firefly-cli/internal/log"
 	"github.com/Fraktal-PM3/firefly-cli/internal/stacks"
@@ -86,6 +83,5 @@ Pull the images for a stack .
 
 func init() {
 	pullCmd.Flags().IntVarP(&pullOptions.Retries, "retries", "r", 0, "Retry attempts to perform on image pull failure")
-	pullCmd.Flags().StringP("stack-dir", "d", path.Join(constants.StacksDir), "Directory where the stack is located ")
 	rootCmd.AddCommand(pullCmd)
 }

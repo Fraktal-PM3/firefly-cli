@@ -20,9 +20,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"path"
-
-	"github.com/Fraktal-PM3/firefly-cli/internal/constants"
 	"github.com/Fraktal-PM3/firefly-cli/internal/docker"
 	"github.com/Fraktal-PM3/firefly-cli/internal/log"
 	"github.com/Fraktal-PM3/firefly-cli/internal/stacks"
@@ -67,6 +64,5 @@ var accountsListCmd = &cobra.Command{
 }
 
 func init() {
-	accountsCmd.Flags().StringP("stack-dir", "d", path.Join(constants.StacksDir), "Directory where the stack is located (defaults to current working directory)")
 	accountsCmd.AddCommand(accountsListCmd)
 }

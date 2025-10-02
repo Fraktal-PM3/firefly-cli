@@ -20,6 +20,7 @@ import (
 	"errors"
 	"fmt"
 	"os"
+	"path"
 
 	"github.com/mattn/go-isatty"
 	"github.com/spf13/cobra"
@@ -27,6 +28,7 @@ import (
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
 
+	"github.com/Fraktal-PM3/firefly-cli/internal/constants"
 	"github.com/Fraktal-PM3/firefly-cli/internal/log"
 )
 
@@ -87,6 +89,7 @@ Optional: Set FIREFLY_HOME env variable for FireFly stack configuration path.
 func Execute() {
 	rootCmd.PersistentFlags().StringVarP(&ansi, "ansi", "", "auto", "control when to print ANSI control characters (\"never\"|\"always\"|\"auto\")")
 	rootCmd.PersistentFlags().BoolVarP(&verbose, "verbose", "v", false, "verbose log output")
+	rootCmd.PersistentFlags().StringP("stack-dir", "d", path.Join(constants.StacksDir), fmt.Sprintf("directory where stacks are stored (default %s)", path.Join(constants.StacksDir)))
 	cobra.CheckErr(rootCmd.Execute())
 }
 
