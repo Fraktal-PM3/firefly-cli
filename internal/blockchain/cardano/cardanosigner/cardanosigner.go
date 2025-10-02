@@ -23,11 +23,11 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/blinklabs-io/bursa"
 	"github.com/Fraktal-PM3/firefly-cli/internal/blockchain/cardano"
 	"github.com/Fraktal-PM3/firefly-cli/internal/constants"
 	"github.com/Fraktal-PM3/firefly-cli/internal/docker"
 	"github.com/Fraktal-PM3/firefly-cli/pkg/types"
+	"github.com/blinklabs-io/bursa"
 )
 
 type CardanoSignerProvider struct {

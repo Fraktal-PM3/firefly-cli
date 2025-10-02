@@ -23,8 +23,8 @@ import (
 	"fmt"
 	"path/filepath"
 
-	secp256k1 "github.com/btcsuite/btcd/btcec/v2"
 	"github.com/Fraktal-PM3/firefly-cli/pkg/types"
+	secp256k1 "github.com/btcsuite/btcd/btcec/v2"
 	"golang.org/x/crypto/sha3"
 
 	"github.com/Fraktal-PM3/firefly-cli/internal/blockchain/ethereum/ethtypes"

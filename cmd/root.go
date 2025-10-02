@@ -89,7 +89,7 @@ Optional: Set FIREFLY_HOME env variable for FireFly stack configuration path.
 func Execute() {
 	rootCmd.PersistentFlags().StringVarP(&ansi, "ansi", "", "auto", "control when to print ANSI control characters (\"never\"|\"always\"|\"auto\")")
 	rootCmd.PersistentFlags().BoolVarP(&verbose, "verbose", "v", false, "verbose log output")
-	rootCmd.PersistentFlags().StringP("stack-dir", "d", path.Join(constants.StacksDir), fmt.Sprintf("directory where stacks are stored (default %s)", path.Join(constants.StacksDir)))
+	rootCmd.PersistentFlags().StringP("stack-dir", "s", path.Join(constants.StacksDir), fmt.Sprintf("directory where stacks are stored (default %s)", path.Join(constants.StacksDir)))
 	cobra.CheckErr(rootCmd.Execute())
 }
 
