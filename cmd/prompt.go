@@ -44,7 +44,6 @@ func prompt(promptText string, validate func(string) error) (string, error) {
 	}
 }
 
-
 func confirm(promptText string) error {
 	reader := bufio.NewReader(os.Stdin)
 	for {

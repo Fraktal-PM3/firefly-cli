@@ -20,6 +20,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
+
 	"github.com/Fraktal-PM3/firefly-cli/internal/log"
 	"github.com/Fraktal-PM3/firefly-cli/internal/stacks"
 	"github.com/spf13/cobra"

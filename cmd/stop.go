@@ -19,6 +19,7 @@ package cmd
 import (
 	"context"
 	"fmt"
+
 	"github.com/Fraktal-PM3/firefly-cli/internal/docker"
 	"github.com/Fraktal-PM3/firefly-cli/internal/log"
 	"github.com/Fraktal-PM3/firefly-cli/internal/stacks"
@@ -46,11 +47,11 @@ var stopCmd = &cobra.Command{
 			return fmt.Errorf("no stack specified")
 		}
 		stackName := args[0]
-		
+
 		stackDirectory, err := cmd.Flags().GetString("stack-dir")
 		if err != nil {
 			return err
-		}		
+		}
 
 		if err := stackManager.LoadStack(stackName, stackDirectory); err != nil {
 			return err

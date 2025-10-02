@@ -22,11 +22,11 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/briandowns/spinner"
 	"github.com/Fraktal-PM3/firefly-cli/internal/docker"
 	"github.com/Fraktal-PM3/firefly-cli/internal/log"
 	"github.com/Fraktal-PM3/firefly-cli/internal/stacks"
 	"github.com/Fraktal-PM3/firefly-cli/pkg/types"
+	"github.com/briandowns/spinner"
 	"github.com/spf13/cobra"
 )
 
